@@ -1,0 +1,43 @@
+// ******************************************
+//setting
+// ******************************************
+$(function () {
+  $('.js-slide').slick({
+    autoplay: true,
+    dots: true,
+    slidesToShow: 1,
+    arrows: false,
+    autoplaySpeed: 5000,
+    centerMode: true,
+    centerPadding: '15%',
+    responsive: [{
+      breakpoint: 650,
+      settings: {
+        centerPadding: '5%'
+      }
+    }]
+  });
+  $('.js-slide-single').slick({
+    autoplay: true,
+    dots: false,
+    slidesToShow: 1,
+    arrows: false,
+    autoplaySpeed: 5000,
+    centerPadding: '5%'
+  });
+  var windowWidth = $(window).width();
+  var windowSm = 650;
+  if (windowWidth <= windowSm) {
+    $(".c-hamburger").click(function () {
+      $(this).toggleClass('active');
+      $('.c-gnv').slideToggle();
+    });
+    $(".c-gnv a").click(function () {
+      $(".c-hamburger").toggleClass('active');
+      $('.c-gnv').slideToggle();
+    });
+  }
+  $(".-sub").hover(function () {
+    $(this).children(".c-gnv-sub").stop().slideToggle();
+  });
+});

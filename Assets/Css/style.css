@@ -1,0 +1,270 @@
+    /* reset css */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    letter-spacing: 2px;
+    scroll-behavior: smooth;
+    font-family: cursive;
+}
+
+.font-family-japan {
+    font-family: monospace;
+}
+
+/* Common */
+.col {
+    float: left;
+}
+.col-full {
+    width: 100%;
+}
+.col-half {
+    width: 50%;
+}
+.col-third {
+    width: 33.33333%;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.row-half {
+    width: 50%;
+}
+.row-third {
+    width: 33.33333%;
+}
+
+.pull-right {
+    float: right;
+}
+
+.text-wight {
+    color: #fff; 
+}
+.text-center {
+    text-align: center !important;
+}
+
+/* Main */
+#main {
+}
+
+#header {
+    width: 100%;
+    height: 60px;
+    background-color: #000;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+#nav ul li {
+    display: inline-block;
+}
+
+
+#nav ul {
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav li a {
+    line-height: 60px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    display: inline-block;
+}
+
+#nav li:hover a {
+    color: #000;
+    background-color: #ccc;
+
+}
+
+
+#siler {
+    position: relative;
+    padding-top: 50%;
+    /* margin-top: 60px; */
+    background: url('/Assets/Images/Header-img.jpg') center / cover no-repeat;
+}
+
+#content {
+
+}
+
+#content .content-section {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 90px;
+    padding: 50px 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.content-section .section__about {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 4px solid;
+}
+.content-section .about__icon {
+    font-size: 50px;
+    padding: 10px 10px 0 10px;
+    border-radius: 10px;
+}
+
+.content-section .about__body {
+    padding-left: 24px;
+    letter-spacing: 4px;
+}
+.content-section .body__title {
+    font-size: 32px;
+}
+.content-section .body__msg {
+    font-style: italic;
+    padding-top: 5px;
+    font-size: 18px;
+}   
+
+#content .section__body .body__img img {
+    width: 100%;
+}
+
+#content .text-about {
+    font-size: 26px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #ccc;
+}
+
+#content .sub-text-about {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    
+}
+
+#content ul {
+    list-style: none;
+}
+
+#content li {
+    padding: 16px;
+    border-top: 2px solid #000;
+}
+
+#content li a {
+    text-decoration: none;
+    color: #000;
+}
+
+#content .body__info {
+    padding-left: 30px;
+}
+#content .info__title {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+#content .info__per {
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+#content .life-school {
+    background-color: #000;
+}
+#content .life-school__title {
+    font-size: 32px;
+    
+}
+#content .life-school .life-school__heading {
+    font-size: 28px;
+    padding-bottom: 20px;
+    border-top: 4px solid #fff;
+}
+#content .life-school .life-school__body {
+    display: flex;
+}
+#content .life-school .life-school__body-img {
+    flex: 1.2;
+    margin-bottom: 12px;
+}
+#content .life-school .life-school__body-img img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+}
+#content .life-school .life-school__body-about {
+    flex: 3;
+    line-height: 2;
+    font-size: 18px;
+}
+
+#content .family-img {
+    width: 400px;
+    max-width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
+
+#content .family-body {
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+#content .family-desc {
+    padding: 20px 50px;
+    letter-spacing: 2px;
+}
+#content .dream-body {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+#content .dream-desc {
+    padding: 16px 0;
+}   
+
+
+#content .dream-img img{
+    max-width: 100%;
+}
+
+#fooder {
+    padding: 64px 16px;
+    text-align: center;
+}
+#fooder .socials-list {
+    font-size: 24px;
+}
+#fooder .socials-list a {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+#fooder .socials-list a:hover {
+    color: rgba(0, 0, 0, 0.3);
+}
+#fooder .copyright,
+#fooder .copyright a {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+

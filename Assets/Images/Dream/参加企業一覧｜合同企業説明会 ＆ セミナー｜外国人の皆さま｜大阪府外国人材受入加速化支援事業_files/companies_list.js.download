@@ -1,0 +1,141 @@
+//companies_list01.json
+$(function () {
+  $.ajax({
+    type: "GET",
+    url: "/assets/json/companies_list01.json",
+    dataType: "json",
+    async: false
+  }).then(function (json) {
+    json.forEach(function (data) {
+      const cat_list = data;
+      for (list in cat_list) {
+        const item_list = cat_list[list]["list"];
+        $('.-js-company_list01').append('<h5>' + cat_list[list]["name"] + '</h5>');
+        var content = '<div class="-company_list">';
+        for (item in item_list) {
+          if (item_list[item]["status"]) {
+            content += '<div class="item">';
+            if (item_list[item]["logo"]) {
+              content += '<figure class="-logo"><img src="../../assets/img/for_job_seekers/companies_list/01/logo_' + item_list[item]["logo"] + '.png"></figure>';
+            } else {
+              content += '<figure class="-logo"><img src="../../assets/img/for_job_seekers/companies_list/logo_none.png"></figure>';
+            }
+            content += '<p class="-name">' + item_list[item]["company"] + '</p>';
+            if (item_list[item]["url"]) {
+              content += '<p class="-link"><a href="' + item_list[item]["url"] + '" target="_blank"><span><ruby>企業<rt>きぎょう</rt></ruby>HP</span></a></p>';
+            }
+            if (item_list[item]["pdf"]) {
+              content += '<p class="-pdf"><a href="../../assets/pdf/for_job_seekers/companies_list/01/job_offer_' + item_list[item]["pdf"] + '.pdf" target="_blank"><span><ruby>求人案内<rt>きゅうじんあんない</rt></ruby></span></a></p>';
+            }
+            content += '</div>';
+          }
+        }
+        content += "</div>";
+        $('.-js-company_list01').append(content);
+
+        /*setTimeout(function(){
+          var h = 0;
+          $('.-name').each(function(){
+            if ($(this).height() > h) {
+              //子要素の高さを変数に代入
+              h = $(this).height();
+            }
+          });
+          $('.-name').height(h);
+        },100);*/
+      }
+    });
+  }, function () {
+    console.log("失敗");
+  });
+});
+
+//companies_list02.json
+$(function () {
+  $.ajax({
+    type: "GET",
+    url: "/assets/json/companies_list02.json",
+    dataType: "json",
+    async: false
+  }).then(function (json) {
+    json.forEach(function (data) {
+      const cat_list = data;
+      for (list in cat_list) {
+        if (!(cat_list[list]["no"] == 4 || cat_list[list]["no"] == 9)) {
+          const item_list = cat_list[list]["list"];
+          $('.-js-company_list02').append('<h5>' + cat_list[list]["name"] + '</h5>');
+          var content = '<div class="-company_list">';
+          for (item in item_list) {
+            if (item_list[item]["status"]) {
+              content += '<div class="item">';
+              if (item_list[item]["logo"]) {
+                content += '<figure class="-logo"><img src="../../assets/img/for_job_seekers/companies_list/02/logo_' + item_list[item]["logo"] + '.png"></figure>';
+              } else {
+                content += '<figure class="-logo"><img src="../../assets/img/for_job_seekers/companies_list/logo_none.png"></figure>';
+              }
+              content += '<p class="-name">' + item_list[item]["company"] + '</p>';
+              if (item_list[item]["url"]) {
+                content += '<p class="-link"><a href="' + item_list[item]["url"] + '" target="_blank"><span><ruby>企業<rt>きぎょう</rt></ruby>HP</span></a></p>';
+              }
+              if (item_list[item]["pdf"]) {
+                content += '<p class="-pdf"><a href="../../assets/pdf/for_job_seekers/companies_list/02/job_offer_' + item_list[item]["pdf"] + '.pdf" target="_blank"><span><ruby>求人案内<rt>きゅうじんあんない</rt></ruby></span></a></p>';
+              }
+              content += '</div>';
+            }
+          }
+          content += "</div>";
+          $('.-js-company_list02').append(content);
+        }
+        setTimeout(function () {
+          var h = 0;
+          $('.-name').each(function () {
+            if ($(this).height() > h) {
+              //子要素の高さを変数に代入
+              h = $(this).height();
+            }
+          });
+          $('.-name').height(h);
+        }, 100);
+      }
+    });
+  }, function () {
+    console.log("失敗");
+  });
+});
+$(function () {
+  $('.-js-list-open').click(function () {
+    setTimeout(function () {
+      var h = 0;
+      $('.-name').each(function () {
+        if ($(this).height() > h) {
+          //子要素の高さを変数に代入
+          h = $(this).height();
+        }
+      });
+      $('.-name').height(h);
+    }, 100);
+    $(this).toggleClass('-active');
+    $(this).next('.-js-company_list01').slideToggle();
+    $(this).next('.-js-company_list02').slideToggle();
+    if ($(this).hasClass('-active')) {
+      $(this).html('<span><ruby>参加<rt>さんか</rt></ruby><ruby>企業<rt>きぎょう</rt></ruby>を<ruby>閉<rt>と</rt></ruby>じる</span>');
+    } else {
+      $(this).html('<span><ruby>参加<rt>さんか</rt></ruby><ruby>企業<rt>きぎょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>る</span>');
+    }
+  });
+});
+$(window).on("scroll", function () {
+  const footerHeight = $("#l-footer").height();
+  const informationHeight = $("#l-information").height();
+  const scrollHeightArea = $(document).height() - informationHeight - footerHeight - $(window).height();
+  const scrollNowPotision = $(document).scrollTop();
+  if (scrollNowPotision > 100) {
+    if (scrollNowPotision > scrollHeightArea) {
+      $('.fix-button').fadeOut();
+    } else {
+      $('.fix-button').fadeIn();
+    }
+  } else {
+    $('.fix-button').fadeOut();
+  }
+});
