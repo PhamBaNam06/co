@@ -97,11 +97,12 @@ html {
 }
 
 
-#siler {
-    position: relative;
-    padding-top: 50%;
+#siler img{
+    width: 100%;
+/*     position: relative; */
+/*     padding-top: 50%; */
     /* margin-top: 60px; */
-    background: url('/Assets/Images/Header-img.jpg') center / cover no-repeat;
+/*     background: url('/Assets/Images/Header-img.jpg') center / cover no-repeat; */
 }
 
 #content {
